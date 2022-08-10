@@ -18,7 +18,6 @@ const Homescreen = () => {
                 backgroundColor: "#EEECF8",
                 marginTop: 35,
                 paddingHorizontal: 20,
-                paddingBottom: 40,
             }}
         >
             <View
@@ -107,7 +106,7 @@ const Homescreen = () => {
                 backgroundStatus="rgba(51, 204, 102, 0.1)"
             />
 
-            <View style={{ marginTop: 20 }}>
+            <View style={{ marginTop: 20, paddingBottom: 30 }}>
                 <Text style={{ fontWeight: "600", fontSize: 20 }}>
                     Services
                 </Text>
