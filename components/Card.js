@@ -9,7 +9,7 @@ const Card = ({ name, model, status, colorOfStatus, backgroundStatus }) => {
                 paddingHorizontal: 20,
                 paddingVertical: 20,
                 borderRadius: 4,
-                marginTop: 10,
+                marginVertical: 10,
             }}
         >
             <View
@@ -28,8 +28,8 @@ const Card = ({ name, model, status, colorOfStatus, backgroundStatus }) => {
                 <View>
                     <Text
                         style={{
-                            color: { colorOfStatus },
-                            backgroundColor: { backgroundStatus },
+                            color: colorOfStatus,
+                            backgroundColor: backgroundStatus,
                             padding: 6,
                             borderRadius: 4,
                         }}
