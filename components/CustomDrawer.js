@@ -3,64 +3,85 @@ import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
 import {
     DrawerContentScrollView,
     DrawerItemList,
+    DrawerItem,
 } from "@react-navigation/drawer";
+
 const CustomDrawer = (props) => {
     return (
         <View
             style={{
                 flex: 1,
-                backgroundColor: "#F5F5F5",
+                backgroundColor: "#FFFFFF",
+                paddingHorizontal: 20,
             }}
         >
             <DrawerContentScrollView {...props}>
-                <View
-                    style={{
-                        flexDirection: "row",
-                        justifyContent: "space-around",
-                        marginTop: 30,
-                    }}
-                >
+                <View>
                     <Image
                         source={require("../assets/icons/motocheck.png")}
                         style={{
-                            height: 116,
-                            width: 116,
-                            borderRadius: 58,
+                            height: 32,
+                            width: 147,
                             marginBottom: 10,
+                            resizeMode: "contain",
+                            marginLeft: 10,
                         }}
                     />
-                    <Text style={{ marginLeft: 20 }}></Text>
+                    <Text></Text>
                 </View>
-                <View>
+                <Pressable
+                    style={{ flexDirection: "row", marginLeft: 18 }}
+                    onPress={() => props.navigation.navigate("Homescreen")}
+                >
+                    <Image
+                        source={require("../assets/icons/pie.png")}
+                        style={{ resizeMode: "contain", width: 20, height: 20 }}
+                    />
                     <Text
                         style={{
                             color: "black",
-                            fontSize: 18,
+                            fontSize: 16,
                             marginBottom: 5,
-                            textAlign: "center",
+                            marginLeft: 30,
+                            fontWeight: "600",
                         }}
                     >
-                        John Doe
+                        Overview
                     </Text>
-                </View>
-                <View
+                </Pressable>
+                <Text
                     style={{
-                        marginHorizontal: 20,
-                        backgroundColor: "#FFFFFF",
-                        marginTop: 25,
-                        borderRadius: 6,
+                        borderBottomWidth: 1,
+                        borderBottomColor: "#E6EBEC",
+                        marginHorizontal: 12,
+                    }}
+                ></Text>
+
+                <DrawerItemList {...props} />
+
+                <Pressable
+                    style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        paddingHorizontal: 17,
+                        paddingTop: 13,
                     }}
                 >
-                    <View>
-                        <DrawerItemList {...props} />
-                    </View>
-                </View>
+                    <Image source={require("../assets/icons/exit.png")} />
+                    <Text
+                        style={{
+                            marginLeft: 32,
+                            color: "#999999",
+                            fontSize: 15,
+                        }}
+                    >
+                        Log out
+                    </Text>
+                </Pressable>
             </DrawerContentScrollView>
             <View
                 style={{
                     padding: 20,
-                    borderTopWidth: 1,
-                    borderTopColor: "#ccc",
                 }}
             >
                 <TouchableOpacity>
@@ -69,27 +90,32 @@ const CustomDrawer = (props) => {
                             flexDirection: "row",
                             alignItems: "center",
                             backgroundColor: "#FFFFFF",
-                            paddingLeft: 12,
                             paddingVertical: 16,
                             borderRadius: 6,
                         }}
                     >
                         <Image
-                            source={require("../../assets/icons/logout.png")}
+                            source={require("../assets/icons/User-logo.png")}
                             style={{
-                                width: 20,
-                                height: 20,
+                                width: 56,
+                                height: 56,
                                 marginRight: 7,
                             }}
                         />
-                        <Text
-                            style={{
-                                fontSize: 15,
-                                marginLeft: 5,
-                            }}
-                        >
-                            Log Out
-                        </Text>
+                        <View style={{ alignItems: "center" }}>
+                            <Text
+                                style={{
+                                    fontSize: 16,
+                                    marginLeft: 5,
+                                    fontWeight: "600",
+                                }}
+                            >
+                                Faith Auto's
+                            </Text>
+                            <Text style={{ color: "#999999", fontSize: 13 }}>
+                                Auto Center
+                            </Text>
+                        </View>
                     </View>
                 </TouchableOpacity>
             </View>

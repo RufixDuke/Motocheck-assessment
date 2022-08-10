@@ -1,5 +1,6 @@
 import {
     Image,
+    Pressable,
     ScrollView,
     StyleSheet,
     Text,
@@ -64,12 +65,12 @@ const Homescreen = () => {
                     paddingTop: 20,
                 }}
             >
-                <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                <Pressable onPress={() => navigation.openDrawer()}>
                     <Image
                         source={require("../assets/icons/menu.png")}
                         style={{ width: 20, height: 20, resizeMode: "contain" }}
                     />
-                </TouchableOpacity>
+                </Pressable>
 
                 <TouchableOpacity
                     style={{
@@ -128,7 +129,6 @@ const Homescreen = () => {
 
             {cardData.map((data) => (
                 <Card
-                    key={data.key}
                     name={data.name}
                     model={data.model}
                     status={data.status}

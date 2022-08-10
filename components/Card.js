@@ -1,14 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const Card = ({
-    name,
-    model,
-    status,
-    colorOfStatus,
-    backgroundStatus,
-    key,
-}) => {
+const Card = ({ name, model, status, colorOfStatus, backgroundStatus }) => {
     return (
         <View
             style={{
@@ -18,7 +11,6 @@ const Card = ({
                 borderRadius: 4,
                 marginVertical: 10,
             }}
-            key={key}
         >
             <View
                 style={{

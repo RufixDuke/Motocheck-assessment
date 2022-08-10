@@ -32,12 +32,11 @@ const Services = ({ image, title, description, key }) => {
                     style={{
                         fontSize: 16,
                         fontWeight: "600",
-                        marginBottom: 10,
                     }}
                 >
                     {title}
                 </Text>
-                <Text style={{ color: "#555555", fontSize: 14 }}>
+                <Text style={{ color: "#555555", fontSize: 14, width: "90%" }}>
                     {description}
                 </Text>
             </View>
