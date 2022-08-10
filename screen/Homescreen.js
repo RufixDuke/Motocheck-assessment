@@ -10,8 +10,44 @@ import {
 import React from "react";
 import Card from "../components/Card";
 import Services from "../components/Services";
+import { useNavigation } from "@react-navigation/native";
+
+const serviceData = [
+    {
+        id: 1,
+        image: require("../assets/icons/inspection.png"),
+        title: "Inspection",
+        description: "Contrary to popular belief, Lorem Ipsum dior",
+    },
+    {
+        id: 2,
+        image: require("../assets/icons/maintenance.png"),
+        title: "Maintenance",
+        description: "Contrary to popular belief, Lorem Ipsum dior",
+    },
+];
+
+const cardData = [
+    {
+        id: 3,
+        name: "Mr. Joseph Agunbiade",
+        model: "Benz 2014 EClass",
+        status: "Pending",
+        colorOfStatus: "#DC2C10",
+        backgroundStatus: "rgba(220, 44, 16, 0.06)",
+    },
+    {
+        id: 4,
+        name: "Mr. Joseph Agunbiade",
+        model: "Benz 2014 EClass",
+        status: "Ready",
+        colorOfStatus: "#33CC66",
+        backgroundStatus: "rgba(51, 204, 102, 0.1)",
+    },
+];
 
 const Homescreen = () => {
+    const navigation = useNavigation();
     return (
         <ScrollView
             style={{
@@ -28,7 +64,7 @@ const Homescreen = () => {
                     paddingTop: 20,
                 }}
             >
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
                     <Image
                         source={require("../assets/icons/menu.png")}
                         style={{ width: 20, height: 20, resizeMode: "contain" }}
@@ -90,38 +126,30 @@ const Homescreen = () => {
                 <Text style={{ color: "#53BED2" }}>View all</Text>
             </View>
 
-            <Card
-                name="Mr. Joseph Agunbiade"
-                model="Benz 2014 EClass"
-                status="Pending"
-                colorOfStatus="#DC2C10"
-                backgroundStatus="rgba(220, 44, 16, 0.06)"
-            />
-
-            <Card
-                name="Mr. Joseph Agunbiade"
-                model="Benz 2014 EClass"
-                status="Ready"
-                colorOfStatus="#33CC66"
-                backgroundStatus="rgba(51, 204, 102, 0.1)"
-            />
+            {cardData.map((data) => (
+                <Card
+                    key={data.key}
+                    name={data.name}
+                    model={data.model}
+                    status={data.status}
+                    colorOfStatus={data.colorOfStatus}
+                    backgroundStatus={data.backgroundStatus}
+                />
+            ))}
 
             <View style={{ marginTop: 20, paddingBottom: 30 }}>
                 <Text style={{ fontWeight: "600", fontSize: 20 }}>
                     Services
                 </Text>
 
-                <Services
-                    image={require("../assets/icons/inspection.png")}
-                    title="Inspection"
-                    description="Contrary to popular belief, Lorem Ipsum dior"
-                />
-
-                <Services
-                    image={require("../assets/icons/maintenance.png")}
-                    title="Maintenance"
-                    description="Contrary to popular belief, Lorem Ipsum dior"
-                />
+                {serviceData.map((data) => (
+                    <Services
+                        key={data.id}
+                        image={data.image}
+                        title={data.title}
+                        description={data.description}
+                    />
+                ))}
             </View>
         </ScrollView>
     );

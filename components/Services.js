@@ -1,7 +1,7 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 
-const Services = ({ image, title, description }) => {
+const Services = ({ image, title, description, key }) => {
     return (
         <View
             style={{
@@ -14,6 +14,7 @@ const Services = ({ image, title, description }) => {
                 justifyContent: "space-between",
                 alignItems: "center",
             }}
+            key={key}
         >
             <View
                 style={{

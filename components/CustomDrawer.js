@@ -20,16 +20,6 @@ const CustomDrawer = (props) => {
                         marginTop: 30,
                     }}
                 >
-                    <Pressable onPress={() => props.navigation.closeDrawer()}>
-                        <Image
-                            source={require("../../assets/icons/left-arrow.png")}
-                            style={{
-                                height: 25,
-                                width: 25,
-                            }}
-                        />
-                    </Pressable>
-
                     <Image
                         source={require("../assets/icons/motocheck.png")}
                         style={{
