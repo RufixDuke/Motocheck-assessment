@@ -1,6 +1,5 @@
 import {
     Image,
-    Pressable,
     ScrollView,
     StyleSheet,
     Text,
@@ -50,38 +49,19 @@ const cardData = [
 const Homescreen = () => {
     const navigation = useNavigation();
     return (
-        <ScrollView
-            style={{
-                backgroundColor: "#EEECF8",
-                marginTop: 35,
-                paddingHorizontal: 20,
-            }}
-        >
-            <View
-                style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    paddingTop: 20,
-                }}
-            >
-                <Pressable onPress={() => navigation.openDrawer()}>
+        <ScrollView style={styles.wrapper}>
+            <View style={styles.header}>
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
                     <Image
                         source={require("../assets/icons/menu.png")}
                         style={{ width: 20, height: 20, resizeMode: "contain" }}
                     />
-                </Pressable>
+                </TouchableOpacity>
 
-                <TouchableOpacity
-                    style={{
-                        backgroundColor: "#FFFFFF",
-                        padding: 10,
-                        borderRadius: 4,
-                    }}
-                >
+                <TouchableOpacity style={styles.headerImage}>
                     <Image
                         source={require("../assets/icons/user.png")}
-                        style={{ width: 20, height: 20, resizeMode: "contain" }}
+                        style={{ width: 15, height: 15, resizeMode: "contain" }}
                     />
                 </TouchableOpacity>
             </View>
@@ -90,13 +70,7 @@ const Homescreen = () => {
                 <Text style={{ fontWeight: "600", fontSize: 24 }}>
                     Welcome Back, Imani👋🏾
                 </Text>
-                <Text
-                    style={{
-                        color: "#868697",
-                        fontWeight: "300",
-                        fontSize: 14,
-                    }}
-                >
+                <Text style={styles.text}>
                     It is a long established fact lorem.{" "}
                 </Text>
             </View>
@@ -112,15 +86,7 @@ const Homescreen = () => {
                 />
             </View>
 
-            <View
-                style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    paddingBottom: 10,
-                    marginTop: 20,
-                }}
-            >
+            <View style={styles.recentContainer}>
                 <Text style={{ fontSize: 20, fontWeight: "600" }}>
                     Recent Checklist
                 </Text>
@@ -158,6 +124,27 @@ const Homescreen = () => {
 export default Homescreen;
 
 const styles = StyleSheet.create({
+    wrapper: {
+        backgroundColor: "#EEECF8",
+        marginTop: 35,
+        paddingHorizontal: 20,
+    },
+    header: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingTop: 20,
+    },
+    headerImage: {
+        backgroundColor: "#FFFFFF",
+        padding: 10,
+        borderRadius: 4,
+    },
+    text: {
+        color: "#868697",
+        fontWeight: "300",
+        fontSize: 14,
+    },
     inputFIeld: {
         flex: 1,
         flexDirection: "row",
@@ -172,5 +159,12 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         backgroundColor: "#fff",
         fontSize: 13,
+    },
+    recentContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingBottom: 10,
+        marginTop: 20,
     },
 });
