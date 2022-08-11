@@ -1,17 +1,10 @@
 import "react-native-gesture-handler";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import CustomDrawer from "./components/CustomDrawer";
-import Homescreen from "./screen/Homescreen";
-import History from "./screen/History";
-import Inspection from "./screen/Inspection";
-import Maintenance from "./screen/Maintenance";
-import Notification from "./screen/Notification";
-import Overview from "./screen/Overview";
-import PaymentWallet from "./screen/PaymentWallet";
-import { Image, Text } from "react-native";
+import Homescreen from "./screens/Homescreen";
+import { Image } from "react-native";
 
 const Drawer = createDrawerNavigator();
 const Stack = createDrawerNavigator();

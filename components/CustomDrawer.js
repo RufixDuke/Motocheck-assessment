@@ -3,7 +3,6 @@ import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
 import {
     DrawerContentScrollView,
     DrawerItemList,
-    DrawerItem,
 } from "@react-navigation/drawer";
 
 const CustomDrawer = (props) => {
