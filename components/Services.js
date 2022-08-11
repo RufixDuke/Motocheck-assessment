@@ -14,7 +14,6 @@ const Services = ({ image, title, description, key }) => {
                 justifyContent: "space-between",
                 alignItems: "center",
             }}
-            key={key}
         >
             <View
                 style={{

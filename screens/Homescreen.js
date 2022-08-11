@@ -62,6 +62,7 @@ const Homescreen = () => {
 
             {CardData.map((data) => (
                 <Card
+                    key={data.id}
                     name={data.name}
                     model={data.model}
                     status={data.status}

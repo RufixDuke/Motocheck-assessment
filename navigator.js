@@ -7,7 +7,6 @@ import Homescreen from "./screens/Homescreen";
 import { Image } from "react-native";
 
 const Drawer = createDrawerNavigator();
-const Stack = createDrawerNavigator();
 
 const screenOptions = {
     headerShown: false,
