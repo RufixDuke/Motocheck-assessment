@@ -11,40 +11,7 @@ import React from "react";
 import Card from "../components/Card";
 import Services from "../components/Services";
 import { useNavigation } from "@react-navigation/native";
-
-const serviceData = [
-    {
-        id: 1,
-        image: require("../assets/icons/inspection.png"),
-        title: "Inspection",
-        description: "Contrary to popular belief, Lorem Ipsum dior",
-    },
-    {
-        id: 2,
-        image: require("../assets/icons/maintenance.png"),
-        title: "Maintenance",
-        description: "Contrary to popular belief, Lorem Ipsum dior",
-    },
-];
-
-const cardData = [
-    {
-        id: 3,
-        name: "Mr. Joseph Agunbiade",
-        model: "Benz 2014 EClass",
-        status: "Pending",
-        colorOfStatus: "#DC2C10",
-        backgroundStatus: "rgba(220, 44, 16, 0.06)",
-    },
-    {
-        id: 4,
-        name: "Mr. Joseph Agunbiade",
-        model: "Benz 2014 EClass",
-        status: "Ready",
-        colorOfStatus: "#33CC66",
-        backgroundStatus: "rgba(51, 204, 102, 0.1)",
-    },
-];
+import { CardData, ServiceData } from "../components/Data";
 
 const Homescreen = () => {
     const navigation = useNavigation();
@@ -93,7 +60,7 @@ const Homescreen = () => {
                 <Text style={{ color: "#53BED2" }}>View all</Text>
             </View>
 
-            {cardData.map((data) => (
+            {CardData.map((data) => (
                 <Card
                     name={data.name}
                     model={data.model}
@@ -108,7 +75,7 @@ const Homescreen = () => {
                     Services
                 </Text>
 
-                {serviceData.map((data) => (
+                {ServiceData.map((data) => (
                     <Services
                         key={data.id}
                         image={data.image}
